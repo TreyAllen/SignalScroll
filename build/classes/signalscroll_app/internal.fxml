@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="signalscroll_app.InternalController">
+    <stylesheets>
+        <URL value="@/signalscroll_app/styles/styles.css" />
+    </stylesheets>
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!--<GridPane fx:id="grid" prefHeight="1018.0" prefWidth="1821.0">-->
+            <GridPane fx:id="grid" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="399.0" minWidth="10.0" prefWidth="399.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="213.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" percentHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="clearButton" layoutX="678.0" layoutY="13.0" mnemonicParsing="false" onAction="#clearButtonHandleAction" prefHeight="5.0" prefWidth="57.0" styleClass="darkButton" stylesheets="@styles/styles.css" text="Clear" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="145.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="stopButton" layoutX="678.0" layoutY="13.0" mnemonicParsing="false" onAction="#stopButtonHandleAction" prefHeight="5.0" prefWidth="57.0" styleClass="maroonButton" stylesheets="@styles/styles.css" text="Stop" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="75.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="startButton" mnemonicParsing="false" onAction="#startButtonHandleAction" prefHeight="5.0" prefWidth="57.0" styleClass="maroonButton" stylesheets="@styles/styles.css" text="Start" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="75.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="logoutButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#logoutButtonHandleAction" prefHeight="5.0" prefWidth="57.0" styleClass="darkButton" stylesheets="@styles/styles.css" text="Logout" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label fx:id="taskPickerLabel" text="Task">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox fx:id="taskPickerComboBox" onAction="#taskPickerComboBoxHandleAction" prefHeight="25.0" prefWidth="148.0">
+                     <GridPane.margin>
+                        <Insets left="40.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <Label fx:id="searchLabel" prefHeight="17.0" prefWidth="42.0" text="Search">
+                     <GridPane.margin>
+                        <Insets left="210.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="searchTextField" maxWidth="170.0" prefHeight="25.0" prefWidth="157.0">
+                     <GridPane.margin>
+                        <Insets left="250.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <!--<TableView fx:id="signalLogTable" prefHeight="929.0" prefWidth="1799.0" stylesheets="@styles/styles.css" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">-->
+                  <TableView fx:id="signalLogTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@styles/styles.css" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="colTask" prefWidth="104.0" styleClass=".columnHeaders" text="Task" />
+                      <TableColumn fx:id="colDate" prefWidth="152.0" text="Date" />
+                        <TableColumn fx:id="colXmit" prefWidth="118.0" text="Xmit" />
+                        <TableColumn fx:id="colSiteName" prefWidth="354.0" text="Site Name" />
+                        <TableColumn fx:id="colEventCode" prefWidth="165.0" text="Event Code" />
+                        <TableColumn fx:id="colSignalCode" prefWidth="62.0" text="Signal Code" />
+                        <TableColumn fx:id="colPoint" prefWidth="69.0" text="Point" />
+                        <TableColumn fx:id="colPhone" prefWidth="119.0" text="Caller ID" />
+                        <TableColumn fx:id="colRawMessage" prefWidth="400.0" text="Raw Data" />
+                    </columns>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </GridPane.margin>
+                  </TableView>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

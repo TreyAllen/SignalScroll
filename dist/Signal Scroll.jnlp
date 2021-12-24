@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Signal Scroll.jnlp">
+  <information>
+    <title>Signal Scroll</title>
+    <vendor>Trey</vendor>
+    <description>Signal Scroll that displays all incoming signals on all receiver tasks. Newest release 2021-06-23</description>
+  <shortcut><desktop/></shortcut>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="SignalScroll_App_v2-0.jar" size="31548" download="eager" />
+    <jar href="lib\json-20210307.jar" size="69710" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Signal Scroll" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="signalscroll_app.SignalScroll_App"  name="Signal Scroll" />
+  <update check="always"/>
+</jnlp>

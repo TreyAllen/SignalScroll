@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="288.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="signalscroll_app.FXMLDocumentController">
+
+    <children>
+      <Label fx:id="signalScrollLabel" alignment="CENTER" layoutX="16.0" layoutY="5.0" prefHeight="68.0" prefWidth="284.0" stylesheets="@styles/styles.css" text="Signal Scroll">
+         <font>
+            <Font name="System Bold Italic" size="46.0" />
+         </font>
+      </Label>
+      <Label fx:id="versionLabel" alignment="CENTER_RIGHT" layoutX="158.0" layoutY="56.0" prefHeight="17.0" prefWidth="135.0" stylesheets="@styles/styles.css" text="v#">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="serverComboBoxLabel" layoutX="27.0" layoutY="86.0" text="Server" />
+      <ComboBox fx:id="serverComboBox" layoutX="103.0" layoutY="82.0" onAction="#handleServerComboBoxChange" prefHeight="25.0" prefWidth="191.0" />
+      <Label fx:id="unLabel" layoutX="27.0" layoutY="127.0" stylesheets="@styles/styles.css" text="Username" />
+      <TextField fx:id="unField" layoutX="103.0" layoutY="123.0" prefHeight="25.0" prefWidth="191.0" stylesheets="@styles/styles.css" />
+      <Label fx:id="pwLabel" layoutX="27.0" layoutY="168.0" prefHeight="17.0" prefWidth="54.0" stylesheets="@styles/styles.css" text="Password" />
+      <PasswordField fx:id="pwField" layoutX="103.0" layoutY="164.0" onAction="#onEnter" prefHeight="25.0" prefWidth="191.0" />
+      <Button fx:id="loginButton" layoutX="103.0" layoutY="205.0" onAction="#handleLoginButtonAction" prefHeight="25.0" prefWidth="191.0" styleClass="maroonButton" stylesheets="@styles/styles.css" text="Login" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="errorMessageLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="241.0" prefHeight="41.0" prefWidth="284.0" styleClass="redText" stylesheets="@styles/styles.css" text="error message" textAlignment="CENTER" visible="false" />
+    </children>
+</AnchorPane>

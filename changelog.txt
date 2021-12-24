@@ -1,0 +1,25 @@
+Version 1.0 - 2021-05-10
+* Implementation
+
+Version 1.1 - 2021-05-12
+* Added error logging to track application process and errors
+* Added code to auto update scroll to last row on refresh
+
+Version 1.2 - 2021-05-14
+* Added code to handle instances of NULL event code on signals to prevent app crash
+
+Version 1.3 - 2021-06-10
+* Adjusted code to check against "ErrorTypeNum" instead of "UserErrorMessage" for invalid session. Valid pSignalLog ErrorTypeNum results should only be 123 (0 rows returned) or 124 (x rows returned). Now if anything other than 123 or 124 is received when calling signal log, it will kick back out to login screen. Adjusted to signal scroll locking up and not displaying new results during active server swap.  It was possible the error result was something other than "Invalid Session" such as "Incorrect Password" so the code kept trying to call signal log instead of kicking out.
+
+Version 2.0 - date 2021-06-22
+* Included functionality to run signal log on just a certain task using drop down menu
+* Included functionality to run signal log on just a certain search parameter from the raw data string i.e. receiver DNIS or phone number
+* Added Stop button to stop the signal scroll if needed
+* Added Clear button to clear the contents of the signal scroll 
+* Built in functionality to accomodate Quick Response by adding line of code that sets a Central Station variable as either "AMS" or "QR". 
+ - If AMS, it does normal AMS processing. If QR, it does additional processing:
+	- Populates different IP address of IIS servers for server chooser
+	- Populates different task drop down list for signal log search
+	- Uses different color stylings of signal types
+* Added drop down box to choose IIS server.  The hardcoded Central Station variable determines output of servers for drop down menu
+* Updated code to accept passed server in ConnectionObject as a variable instead of using hardcoded addresses
